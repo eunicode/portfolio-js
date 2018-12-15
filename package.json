@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate-gulp-basic",
+  "name": "fcc-portfolio-js",
   "version": "1.0.0",
-  "description": "## Description",
+  "description": "Portfolio site",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,17 +9,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eunicode/boilerplate-gulp-basic.git"
+    "url": "git+https://github.com/eunicode/portfolio-js.git"
   },
-  "author": "",
+  "author": "Eunice Park",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/eunicode/boilerplate-gulp-basic/issues"
+    "url": "https://github.com/eunicode/portfolio-js/issues"
   },
-  "homepage": "https://github.com/eunicode/boilerplate-gulp-basic#readme",
+  "homepage": "https://github.com/eunicode/portfolio-js#readme",
   "dependencies": {
     "browser-sync": "^2.26.3",
     "gh-pages": "^2.0.1",
-    "gulp": "^4.0.0"
+    "gulp": "^4.0.0",
+    "normalize.css": "^8.0.1"
   }
 }
