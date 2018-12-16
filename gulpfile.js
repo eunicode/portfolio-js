@@ -25,6 +25,12 @@ function serve(done) {
   done();
 }
 
+// Copy and paste normalize.css
+function copy() {
+  return gulp.src('./node_modules/normalize.css/normalize.css')
+             .pipe(gulp.dest('./app/css'));
+}
+
 function reload(done) {
   browserSync.reload();
   done();
@@ -37,4 +43,4 @@ function watch() {
 }
 
 // Default Task
-gulp.task('default', gulp.series(serve, watch));
+gulp.task('default', gulp.series(copy, serve, watch));

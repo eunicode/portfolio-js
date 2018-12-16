@@ -28,3 +28,13 @@ devDependencies<br>
 dependencies<br>
 - `npm install --save <package name>`
 - `npm i -D <package name>`
+
+---
+
+GULP
+
+Error: File not found with singular glob: /node_modules/normalize.css/normalize.css (if this was purposeful, use `allowEmpty` option)
+
+I tried to use gulp to copy and paste the node_modules normalize.css file into css folder. It didn't work when I used absolute file paths, but it worked when I used relative file paths. 
+Didn't work: '/node_modules/normalize.css/normalize.css'
+Did work: './node_modules/normalize.css/normalize.css'
