@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>EDIT ME</title>
+    <title>Eunice Park's Portfolio</title>
     <link href="css/normalize.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
   </head>
 
   <body>
-    <nav>
+    <nav class="navigation">
       <ul id="navbar">
         <li><a href="#welcome-section">About</a></li>
         <li><a href="#projects">Portfolio</a></li>
@@ -18,41 +18,41 @@
       </ul>
     </nav>
 
-    <section id="welcome-section">
+    <section id="welcome-section" class="welcome">
       <h1>Hi, I'm Eunice</h1>
       <p>I'm a self-taught front end web developer.</p>
     </section>
 
-    <section id="projects">
+    <section id="projects" class="projects">
       <h2>These are some of my projects:</h2>
 
-      <h3 class="projects">Group Projects</h3>
-
+      <h3 class="projects__header">Group Projects</h3>
+      <!-- Add elements with JS -->
       <!-- Sample DOM element -->
       <!-- 
-      <div class="container">
+      <div class="projects__tile-container">
 
-        <div class="project-tile">
-          <img class="project-image" src="./images/pic-scavenger.png" alt="pic-scavenger"/> 
+        <div class="projects__tile">
+          <img class="projects__tile-image" src="./images/pic-scavenger.png" alt="pic-scavenger"/> 
           <a>Pic Scavenger</a>
         </div>
-        
+
       </div> -->
 
-      <h3 class="projects">Individual Projects</h3>
+      <h3 class="projects__header">Individual Projects</h3>
       <!-- Add elements with JS -->
 
     </section><!-- #projects -->
 
-    <section id="contact">
+    <section id="contact" class="contact">
       <h2>Let's work together</h2>
-      <a id="profile-link">GitHub</a> 
+      <a id="profile-link" href="https://github.com/eunicode/" target="_blank">GitHub</a> 
       <a>Twitter</a>
 
       <div>Leave a message</div>
     </section>
 
-    <footer><p>Coded by eunicode</p></footer>
+    <footer class="footer"><p>Coded by eunicode</p></footer>
 
     <script src="js/script.js"></script>
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
