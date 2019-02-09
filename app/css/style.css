@@ -30,11 +30,13 @@ h3 {
 
 }
 
+/* Empty row to push down main content */
 .navigation {
   /* background-color: ; */
   /* order: 1; */ /* Make other grid items order 2, 3, etc */
   /* order: -1; */
-  height: 5rem; /* Crucial */
+  height: 5em; /* Crucial */
+
   /* position: fixed; */
   /* top: 0;  */ /* Position navbar at top of page */
   /* margin-top: 0; */
@@ -43,16 +45,19 @@ h3 {
   /* height: 5rem; */
 }
 
+/* Links in fixed position at top of viewport */
 .navigation__links-container {
   background-color: lightgreen;
   position: fixed;
-  /* top: 0; */ /* Seems unnecessary bc parent is grid item */
+  /* top: 0; */ /* Unnecessary perhaps bc parent is grid item */
   margin-top: 0;
   width: 100%;
   /* overflow: hidden; */
   /* z-index: 1; */
-  height: 5rem;
+  height: 5em;
   padding-inline-start: 0px;
+  margin-block-end: 0;
+  padding: 1em;
 }
 
 .navigation__links-container li {
@@ -83,11 +88,13 @@ h3 {
   text-align: center;
   text-transform: uppercase;
   font-size: 0.8em;
+  margin-top: 3em;
 }
 
 .projects__tile-image {
   display: block;
   width: 200px;
+  padding: 1em;
 }
 
 /*--------------------------------------------------------------
@@ -100,24 +107,59 @@ Layout
 @media (min-width: 769px) {
 
 	.welcome, .projects, .contact {
-		width: 80%;
+    width: 80%; 
+    /* Element will be 80% of its parent's width, which is equal to the viewport */
 		margin: 0 auto; /* Centers element, but not text */
-		max-width: 1150px; /* Since max-width is set, even on extremely wide browsers, the main text will be contained */
+    max-width: 50em; 
+    /* On extremely wide viewports, the max width will be 1150px. The resulting width will be 80% of 50em */
   }
   
 }
 
 /* ---- For browsers that support Flexbox ---- */
 
+html {
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
 
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.navigation {
+  /* Override fallback fixed navbar */
+  height: auto;
+
+  flex: 0 0 auto;
+  /* none - item is inflexible // flex-grow | flex-shrink | flex-basis */
+}
+
+.navigation__links-container {
+  /* Override fallback fixed navbar */
+  position: static;
+  height: auto;
+}
+
+.container--not-navbar {
+  flex: 1 1 auto;
+  /* auto - item sized by width, height props, but also grows to fill container, or shrinks to fit container // flex-grow | flex-shrink | flex-basis */
+  overflow-y: scroll;
+}
 
 /* ---- For browsers that support Grid ---- */
 
-body {
-  display: grid;
+/* body { */
+  /* display: grid; */
   /* grid-template-rows: 100px auto; */
   /* min-height: 100vh; */
-}
+/* } */
 
 .navigation {
   /* grid-column: auto; */
