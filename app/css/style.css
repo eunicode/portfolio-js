@@ -1,4 +1,34 @@
 /*--------------------------------------------------------------
+CSS Variables
+--------------------------------------------------------------*/
+
+:root {
+  --red: #f74d5f;
+  --orange: #ff9d44;
+  --yellow: #FFDD67;
+  --yellow-light: #ffe55f;
+  --green: #8cd842;
+  --green-light: #c5e763;
+  --blue: #64B5F6;
+  --blue-bright: #40C4FF;
+  --blue-aqua: #80DEEA;
+  --blue-periwinkle: #536DFE;
+  --purple: #7f39fb;
+  --purple-light: #cb63e6;
+  --pink: #ff5a79;
+  --brown: #a78674;
+  --gray: #CEDAE6;
+  --gray-light: #f5f5f5;
+  --gray-blue: #E7F4FF;
+  --gray-blue2: #CEDAE6;
+
+  /* --orange: #FC9F5B; */
+  /* --orange-light: #FBD1A2; */
+  /* --aqua: #7DCFB6; */
+  /* --green: #33CA7F; */
+}
+
+/*--------------------------------------------------------------
 Accessibility
 --------------------------------------------------------------*/
 
@@ -36,7 +66,7 @@ h3 {
 
 /* Empty row to push down main content */
 .navigation {
-  /* background-color: lightgreen; */
+  background-color: var(--yellow);
   /* order: 1; */ /* Make other grid items order 2, 3, etc */
   /* order: -1; */
   height: 5em; /* Crucial */
@@ -51,7 +81,7 @@ h3 {
 
 /* Links in fixed position at top of viewport - overlay */
 .navigation__links-container {
-  background-color: lightgreen;
+  background-color: var(--yellow);
   position: fixed;
   /* top: 0; */ /* Unnecessary perhaps bc parent is grid item */
   margin-top: 0;
@@ -70,34 +100,58 @@ h3 {
 
 .navigation__links-container a {
   display: block;
+  color: white;
+  /* color: var(--pink); */
+  font-weight: bold;
 }
 
 .welcome {
   /* order: 2; */
+  background-color: var(--yellow);
 }
 
 .projects {
   /* order: 3; */
-}
-
-.contact {
-  /* order: 4; */
-}
-
-.footer {
-  /* order: 5; */
-  background: lightgreen;
-  width: 100%;
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 0.8em;
-  margin-top: 3em;
+  background-color: var(--gray-light);
 }
 
 .projects__tile-image {
   display: block;
   width: 200px;
   padding: 1em;
+}
+
+.contact {
+  /* order: 4; */
+  /* background-color: var(--green); */
+  /* background-color: var(--green-light); */
+  /* background-color: var(--brown); */
+  /* background-color: var(--orange); */
+  /* background-color: #FFB74D; */
+  background-color: var(--gray-blue);
+  /* background-color: var(--gray-blue2); */
+  /* background-color: var(--gray-light); */
+
+  /* margin-bottom: 3em; */
+}
+
+.contact__links-container {
+  margin-bottom: 3em;
+}
+
+.footer {
+  /* order: 5; */
+  /* background-color: #00e5ff; */
+  background-color: var(--blue-bright);
+  /* background-color: var(--purple-light); */
+  /* background-color: var(--blue-periwinkle); */
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  /* margin-top: 3em; */
+  font-weight: bold;
+  color: white;
 }
 
 /*--------------------------------------------------------------
@@ -109,19 +163,22 @@ Layout
 /* For widths >= 769px, constrain main content's width */
 @media (min-width: 769px) {
 
-	.welcome, .projects, .contact {
+	.width-constrain {
     width: 80%; 
     /* Element will be 80% of its parent's width, which is equal to the viewport */
-		margin: 0 auto; /* Centers element, but not text */
+    /* margin: 0 auto;  */
+    margin: auto;
+    /* Centers element, but not text */
     max-width: 50em; 
     /* On extremely wide viewports, the max width will be 1150px. The resulting width will be 80% of 50em */
   }
-  
 }
 
 /* ---- For browsers that support Flexbox ---- */
 
-
+.navigation__links-container {
+  display: flex;
+}
 
 /* ---- For browsers that support Grid ---- */
 
