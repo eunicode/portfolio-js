@@ -6,6 +6,10 @@ Accessibility
 Typography
 --------------------------------------------------------------*/
 
+a {
+  text-decoration: none;
+}
+
 /*--------------------------------------------------------------
 Element Styles
 --------------------------------------------------------------*/
@@ -32,20 +36,20 @@ h3 {
 
 /* Empty row to push down main content */
 .navigation {
-  /* background-color: ; */
+  /* background-color: lightgreen; */
   /* order: 1; */ /* Make other grid items order 2, 3, etc */
   /* order: -1; */
   height: 5em; /* Crucial */
 
+  /* Make this element fixed */
   /* position: fixed; */
   /* top: 0;  */ /* Position navbar at top of page */
   /* margin-top: 0; */
   /* width: 100%; */
   /* overflow: hidden; */
-  /* height: 5rem; */
 }
 
-/* Links in fixed position at top of viewport */
+/* Links in fixed position at top of viewport - overlay */
 .navigation__links-container {
   background-color: lightgreen;
   position: fixed;
@@ -54,9 +58,9 @@ h3 {
   width: 100%;
   /* overflow: hidden; */
   /* z-index: 1; */
-  height: 5em;
-  padding-inline-start: 0px;
+  /* height: 5em; */
   margin-block-end: 0;
+  /* padding-inline-start: 0px; */
   padding: 1em;
 }
 
@@ -65,7 +69,6 @@ h3 {
 }
 
 .navigation__links-container a {
-  text-decoration: none;
   display: block;
 }
 
@@ -118,48 +121,15 @@ Layout
 
 /* ---- For browsers that support Flexbox ---- */
 
-html {
-  height: 100%;
-  min-height: 100%;
-  overflow: hidden;
 
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  min-height: 100%;
-  overflow: hidden;
-}
-
-.navigation {
-  /* Override fallback fixed navbar */
-  height: auto;
-
-  flex: 0 0 auto;
-  /* none - item is inflexible // flex-grow | flex-shrink | flex-basis */
-}
-
-.navigation__links-container {
-  /* Override fallback fixed navbar */
-  position: static;
-  height: auto;
-}
-
-.container--not-navbar {
-  flex: 1 1 auto;
-  /* auto - item sized by width, height props, but also grows to fill container, or shrinks to fit container // flex-grow | flex-shrink | flex-basis */
-  overflow-y: scroll;
-}
 
 /* ---- For browsers that support Grid ---- */
 
-/* body { */
-  /* display: grid; */
+body {
+  display: grid;
   /* grid-template-rows: 100px auto; */
   /* min-height: 100vh; */
-/* } */
+}
 
 .navigation {
   /* grid-column: auto; */
