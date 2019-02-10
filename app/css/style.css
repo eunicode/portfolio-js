@@ -99,10 +99,11 @@ h3 {
 }
 
 .navigation__links-container a {
-  display: block;
-  color: white;
   /* color: var(--pink); */
+  /* color: white; */
+  color: black;
   font-weight: bold;
+  padding: 0 1em;
 }
 
 .welcome {
@@ -135,8 +136,12 @@ h3 {
   /* margin-bottom: 3em; */
 }
 
+.contact .width-constrain {
+  /* padding: 1em 0; */
+  margin: 3em auto;
+}
 .contact__links-container {
-  margin-bottom: 3em;
+  /* margin-bottom: 3em; */
 }
 
 .footer {
@@ -167,7 +172,7 @@ Layout
     width: 80%; 
     /* Element will be 80% of its parent's width, which is equal to the viewport */
     /* margin: 0 auto;  */
-    margin: auto;
+    margin: 3em auto;
     /* Centers element, but not text */
     max-width: 50em; 
     /* On extremely wide viewports, the max width will be 1150px. The resulting width will be 80% of 50em */
@@ -178,7 +183,16 @@ Layout
 
 .navigation__links-container {
   display: flex;
+  justify-content: flex-end;
 }
+
+/* .contact .width-constrain {
+  display: flex;
+  flex-direction: column;
+  height: 20em;
+  justify-content: center;
+  align-items: center;
+} */
 
 /* ---- For browsers that support Grid ---- */
 
@@ -199,3 +213,8 @@ body {
 /*--------------------------------------------------------------
 Media Queries
 --------------------------------------------------------------*/
+
+/*
+TO DO 
+Constrain width with Grid
+*/
