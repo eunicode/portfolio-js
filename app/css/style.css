@@ -109,6 +109,7 @@ h3 {
 .welcome {
   /* order: 2; */
   background-color: var(--yellow);
+  height: calc(100vh - 5em);
 }
 
 .projects {
