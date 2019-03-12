@@ -1,54 +1,61 @@
 // console.log(`Hi, JS is working`);
 
 // Group Projects
-
-const projectTitles_Group = ['Turtles Tab', 'Momentum Dash Clone', 'Pic Scavenger'];
-
-const projectImages_Group = ['turtles-tab', 'momentum-dash', 'pic-scavenger'];
-
-projectGithub_Group = [];
-
-projectDemos_Group = [];
+const projGroup = {
+  titles: ["Turtles Tab", "Momentum Dash Clone", "Pic Scavenger"],
+  images: ["turtles-tab", "momentum-dash", "pic-scavenger"],
+  github: [
+    "https://github.com/eunicode/Voyage2-Turtles-11",
+    "https://github.com/krittiyaclark/Momentumdash",
+    "https://github.com/teamjake2018/jake"
+  ],
+  demos: []
+};
 
 // Individual Projects
-
-const projectTitles_Indiv = ['ES6 Technical Documentation', 'Twitch Tracker', 'Survey Form'];
-
-const projectImages_Indiv = ['es6-docs', 'twitch-tracker', 'survey-form'];
-
-const projectGithub_Indiv = [];
-
-projectDemos_Indiv = [];
+const projInd = {
+  titles: ["ES6 Technical Documentation", "Twitch Tracker", "Survey Form"],
+  images: ["es6-docs", "twitch-tracker", "survey-form"],
+  github: [
+    "https://github.com/eunicode/tech-doc",
+    "https://github.com/eunicode/twitch-status",
+    "https://github.com/eunicode/survey-form"
+  ],
+  demos: []
+};
 
 function keepTrackOfH3() {
   // Keep track of how many times `inner` fxn is called with closure
   let countCalls = 0;
 
-  const h3AnchorAll = document.querySelectorAll('.projects__header');
+  const h3AnchorAll = document.querySelectorAll(".projects__header"); //
 
-  function inner(titles, imageLinks) {
+  function inner(tileData) {
     // The first call attaches the generated section to first h3, and so forth
     const countIdx = countCalls;
     const h3Anchor = h3AnchorAll[countIdx];
 
-    const container = document.createElement('div');
-    container.className = 'projects__tile-container';
+    const container = document.createElement("div");
+    container.className = "projects__tile-container";
     h3Anchor.after(container);
 
-    for (let i = 0; i < titles.length; i++) {
-      const projectTile = document.createElement('div');
-      projectTile.className = 'projects__tile';
+    for (let i = 0; i < tileData.titles.length; i++) {
+      // Create project-tile, and append to tile-container
+      const projectTile = document.createElement("div");
+      projectTile.className = "projects__tile";
       container.appendChild(projectTile);
 
-      const projectImage = document.createElement('img');
-      projectImage.className = 'projects__tile-image';
-      projectImage.src = `./images/${imageLinks[i]}.png`
-      projectImage.alt = titles[i];
+      // Create tile-image, and append to project-tile
+      const projectImage = document.createElement("img");
+      projectImage.className = "projects__tile-image";
+      projectImage.src = `./images/${tileData.images[i]}.png`;
+      projectImage.alt = tileData.titles[i];
       projectTile.appendChild(projectImage);
 
-      const projectLink = document.createElement('a');
-      projectLink.href = `https://github.com/eunicode`;
-      projectLink.textContent = titles[i];
+      // Create tile-link, and append to project-tile
+      const projectLink = document.createElement("a");
+      projectLink.href = tileData.github[i];
+      projectLink.textContent = tileData.titles[i];
       projectTile.appendChild(projectLink);
     }
 
@@ -58,19 +65,23 @@ function keepTrackOfH3() {
   return inner;
 }
 
+// keepTrackOfH3 returns a function with a closure over a counter variable
 const generateTiles = keepTrackOfH3();
 
 // Attach DOM elements to first h3
-generateTiles(projectTitles_Group, projectImages_Group);
+generateTiles(projGroup);
 
 // Attach DOM elements to second h3
-generateTiles(projectTitles_Indiv, projectImages_Indiv);
+generateTiles(projInd);
 
-// TO DO
+/* =================================================================  
+  TO DO
+================================================================= */
+
 /* 
 Minify/optimize images with gulp
 
-BEM CSS class names
+✔ BEM CSS class names
 
 Create production version
 public - index.html 
@@ -81,9 +92,14 @@ The files served in development and production will be the build folder.
 
 Get rid of global variables
 Package into object
+
+Create a React version
 */
 
-// NOTES
+/* =================================================================  
+  NOTES
+================================================================= */
+
 /*
 CLOSURE
 https://github.com/eunicode/algos/blob/master/csx/closure-scope-excon/cycleIterator.js
@@ -91,7 +107,10 @@ https://github.com/eunicode/algos/blob/master/csx/closure-scope-excon/censor.js
 
 */
 
-// LESSONS LEARNED
+/* =================================================================  
+  LESSONS LEARNED
+================================================================= */
+
 /*
 How TO - Fixed Menu
 https://www.w3schools.com/howto/howto_css_fixed_menu.asp
@@ -102,8 +121,11 @@ https://www.w3schools.com/howto/howto_js_navbar_sticky.asp
 How TO - On Scroll Header
 https://www.w3schools.com/howto/howto_js_sticky_header.asp
 
+--------------------------------------------------------------------
 Treehouse CSS Grid - Practice Flexible Grid Layout
+Treehouse CSS Grid Layout - 3.6. Using Grid with Flexbox
 
+--------------------------------------------------------------------
 BEM
 
 BEM Quick Start
@@ -119,4 +141,9 @@ projects__tile-image
 Alternative #2 Create a new block
 projects-tile
 projects-tile__image
+
+--------------------------------------------------------------------
+Fixed navbar with fixed height with Grid
+Fixed navbar with flexible height with Flexbox
+Con: Since the main container is a Flex container, it can't be a grid container. 
 */

@@ -36,3 +36,4 @@ This website serves as an online portfolio by showcasing one's projects and has 
 ## To-do
 
 - Fixed navbar with flexible height without using `overflow` hack
+- Refactor constrained-width content in full-bleed sections with CSS Grid
