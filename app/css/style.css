@@ -119,8 +119,8 @@ h3 {
 
 .projects__tile-image {
   display: block;
-  width: 200px;
-  padding: 1em;
+  width: 100%; /* tied to grid & grid-template-columns */
+  /* padding: 1em; */
 }
 
 .contact {
@@ -195,6 +195,8 @@ Layout
   align-items: center;
 } */
 
+
+
 /* ---- For browsers that support Grid ---- */
 
 body {
@@ -211,11 +213,42 @@ body {
   /* grid-column: 1; */
 }
 
+.projects__tile-container {
+  display: grid;
+  /* Use the Grid functions and keywords to auto-generate as many columns 
+  necessary to fit the available space.
+  `auto-fit` will automatically fit column tracks. 
+  Using `auto-fit` with minmax() enables responsive layouts without media queries.
+  repeat()'s first parameter = number of repetitions
+  repeat()'s second parameter = value to repeat
+  The columns' min-width is 280px; max-width is 1fr. */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 20px;
+}
+
 /*--------------------------------------------------------------
 Media Queries
 --------------------------------------------------------------*/
 
+/* =================================================================  
+  TO DO
+================================================================= */
+
 /*
-TO DO 
 Constrain width with Grid
+Widen width
+
+FIREFOX PROBLEMS
+- Fix fixed header causing horizontal overflow
+- Fix white space on bottom, caused by turning on grid for project tiles + narrow viewport
+*/
+
+/* =================================================================  
+  INSPIRATION
+================================================================= */
+
+/*
+https://www.spotify.com/us/
+https://www.twitch.tv/
+https://bear.app/
 */

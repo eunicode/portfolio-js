@@ -40,19 +40,19 @@ function keepTrackOfH3() {
     h3Anchor.after(container);
 
     for (let i = 0; i < tileData.titles.length; i++) {
-      // Create project-tile, and append to tile-container
+      // Create tile, and append to tile-container
       const projectTile = document.createElement("div");
       projectTile.className = "projects__tile";
       container.appendChild(projectTile);
 
-      // Create tile-image, and append to project-tile
+      // Create tile-image, and append to tile
       const projectImage = document.createElement("img");
       projectImage.className = "projects__tile-image";
       projectImage.src = `./images/${tileData.images[i]}.png`;
       projectImage.alt = tileData.titles[i];
       projectTile.appendChild(projectImage);
 
-      // Create tile-link, and append to project-tile
+      // Create tile-link, and append to tile
       const projectLink = document.createElement("a");
       projectLink.href = tileData.github[i];
       projectLink.textContent = tileData.titles[i];
