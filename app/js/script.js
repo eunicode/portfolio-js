@@ -40,23 +40,28 @@ function keepTrackOfH3() {
     h3Anchor.after(container);
 
     for (let i = 0; i < tileData.titles.length; i++) {
-      // Create tile, and append to tile-container
+      // Create tile, and nest inside tile-container
       const projectTile = document.createElement("div");
       projectTile.className = "projects__tile";
-      container.appendChild(projectTile);
+      container.appendChild(projectTile); // appendChild = nest
 
-      // Create tile-image, and append to tile
+      // Create tile-image, and nest inside tile
       const projectImage = document.createElement("img");
       projectImage.className = "projects__tile-image";
       projectImage.src = `./images/${tileData.images[i]}.png`;
       projectImage.alt = tileData.titles[i];
       projectTile.appendChild(projectImage);
 
-      // Create tile-link, and append to tile
+      // Create tile-description, and nest inside tile
+      const projectDescrip = document.createElement("div");
+      projectDescrip.className = "projects__tile-descrip"; 
+      projectTile.appendChild(projectDescrip);
+
+      // Create tile-link, and nest inside tile-description
       const projectLink = document.createElement("a");
       projectLink.href = tileData.github[i];
       projectLink.textContent = tileData.titles[i];
-      projectTile.appendChild(projectLink);
+      projectDescrip.appendChild(projectLink);
     }
 
     countCalls += 1;
