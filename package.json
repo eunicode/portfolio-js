@@ -18,9 +18,9 @@
   },
   "homepage": "https://github.com/eunicode/portfolio-js#readme",
   "dependencies": {
-    "browser-sync": "^2.26.3",
-    "gh-pages": "^2.0.1",
-    "gulp": "^4.0.0",
+    "browser-sync": "^2.26.14",
+    "gh-pages": "^2.2.0",
+    "gulp": "^4.0.2",
     "normalize.css": "^8.0.1"
   }
 }
