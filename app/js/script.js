@@ -99,6 +99,17 @@ Get rid of global variables
 Package into object
 
 Create a React version
+
+----------------------------------------------------------
+Add photo
+Add more personal about
+Add gradient 
+
+Add links to linkedin, Youtube, Twitter, Medium,
+Add contact form, email 
+
+Add title of project on top. Make this a different color
+Add source code | demo on bottom. Make this a different color 
 */
 
 /* =================================================================  
